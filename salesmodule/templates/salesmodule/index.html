@@ -1,0 +1,32 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+ 
+    <title>ERP </title>
+ 
+	  {% load bootstrap4 %}
+ 
+	  {# CSS Bootstrap #}
+	  {% bootstrap_css %}
+ 
+ 
+</head>
+<body>
+    {% block content %}
+   <form action="/buscar/" method="GET">
+        <input type="text" name="product_id">
+        <input type="submit" value="buscar">
+    </form>
+
+  {# JS y jQuery Bootstrap #}
+  {% bootstrap_javascript jquery='full' %}
+  
+  {% endblock content %}
+ 
+  <button type="submit" class="save btn btn-default">OK</button>
+ </form>
+</body>
+</html>

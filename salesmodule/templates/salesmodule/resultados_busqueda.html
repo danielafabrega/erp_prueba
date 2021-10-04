@@ -1,0 +1,70 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+ 
+    <title>ERP </title>
+ 
+	  {% load bootstrap4 %}
+ 
+	  {# CSS Bootstrap #}
+	  {% bootstrap_css %}
+ 
+ 
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Realizar venta</a>
+            <a class="navbar-brand" href="/admin/">Administrador</a>
+        </div>
+      </nav>
+    {% block content %}
+    <body>
+        {% if product %}
+            {% for producto in product %}
+            <div class="container">
+                <div class="row">
+                  <div class="col">
+                <input class="m-3 form-control" type="text" value="{{producto.product_code}}" aria-label="readonly input example" readonly>
+                </div>
+                <div class="col">
+                <input class="m-3 form-control" type="text" value="{{producto.description}}" aria-label="readonly input example" readonly>
+            </div>
+            <div class="col"></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                <select class="m-3 form-select" aria-label="Disabled select example" disabled>
+                    <option selected>{{type_document}}</option>
+                
+                </select>
+            </div>
+            <div class="col">
+                <select class="m-3 form-select" aria-label="Disabled select example" disabled>
+                    <option selected>{{m_pay}}</option>
+                
+                </select>
+            </div>
+            <div class="col"></div>
+            </div>
+        </div>
+                
+            {% endfor %}
+
+        {% else %}
+        <p> PRODUCTO NO ENCONTRADO</p>
+
+        {% endif %}
+    </body>
+
+  {# JS y jQuery Bootstrap #}
+  {% bootstrap_javascript jquery='full' %}
+  
+  {% endblock content %}
+ 
+ </form>
+</body>
+</html>
